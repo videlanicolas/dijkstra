@@ -13,12 +13,6 @@ class Node(object):
 		self.prev = None
 	def __eq__(self,other):
 		return True if other.label == self.label else False
-	def isconnected(self,other):
-		return True if any([x[0] == other for x in self.neighbors]) else False
-	def spf(self):
-		for node, cost in self.neighbors:
-			node.cost = min(node.cost,self.cost + cost)
-		self.visited = True
 
 class Graph(object):
 	def __init__(self):
